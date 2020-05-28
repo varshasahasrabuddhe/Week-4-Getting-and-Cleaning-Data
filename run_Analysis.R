@@ -1,6 +1,6 @@
 setwd("C:/Users/vsahasrabuddhe/Documents/Assignments/Data Claening and Tidy data/Week 4/getdata_projectfiles_UCI HAR Dataset/UCI HAR Dataset")
-install.packages("dplyr")
-library(dplyr)
+#install.packages("dplyr")
+#library(dplyr)
 activity_labels <- read.table("activity_labels.txt")
 names(activity_labels) <- c("activity_code","activity_desc")
 features <- read.table("features.txt")
@@ -33,7 +33,7 @@ names(y_train) <- c("activity_code")
 
 obs_train <- read.table("x_train.txt")
 names(obs_train) <- as.character(features$V2)
-x_train<- obs_rain[,grep("mean|Mean|std", names(obs_test))]
+x_train<- obs_train[,grep("mean|Mean|std", names(obs_test))]
 ##x_train <- obs_train[,c(1:6,41:46,81:86,121:126,161:166,201:202,214:215,227:228,240:241,253:254,266:271,294:296,345:350,373:375,424:429,452:454,503:504,513,516:517,526,529:530,539,542:543,552,555:561)]
 train <- cbind(s_train, y_train,x_train)
 
